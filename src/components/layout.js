@@ -1,10 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Sidebar from './sidebar'
 import './layout.css'
+import '../styles/post-page.css'
 import '../styles/layout-overide.css'
 
 const Layout = ({ children }) => (
@@ -53,8 +53,11 @@ const Layout = ({ children }) => (
           >
             <div style={{ flex: 3.5, paddingRight: '30px' }}>{children}</div>
             <div style={{ flex: 2 }}>
-              <Sidebar title='My Blog' description='This is a simple blog' />
-              <Sidebar title='About me' description="I'm learning to be React Developer at MMT Digital :-)" />
+              <Sidebar title="My Blog" description="This is a simple blog" />
+              <Sidebar
+                title="About me"
+                description="I'm learning to be React Developer at MMT Digital :-)"
+              />
             </div>
           </div>
         </div>
@@ -62,9 +65,5 @@ const Layout = ({ children }) => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
