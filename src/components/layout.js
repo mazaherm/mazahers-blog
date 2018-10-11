@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
 import Header from './header'
 import Sidebar from './sidebar'
 import './layout.css'
@@ -20,7 +19,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <React.Fragment>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -52,14 +51,14 @@ const Layout = ({ children }) => (
               padding: '25px',
             }}
           >
-            <div style={{ flex: 2.5, paddingRight: '30px' }}>{children}</div>
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 3.5, paddingRight: '30px' }}>{children}</div>
+            <div style={{ flex: 2 }}>
               <Sidebar title='My Blog' description='This is a simple blog' />
               <Sidebar title='About me' description="I'm learning to be React Developer at MMT Digital :-)" />
             </div>
           </div>
         </div>
-      </>
+      </React.Fragment>
     )}
   />
 )
