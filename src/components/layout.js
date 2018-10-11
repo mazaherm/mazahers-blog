@@ -4,7 +4,9 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Sidebar from './sidebar'
 import './layout.css'
+import '../styles/layout-overide.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,12 +34,30 @@ const Layout = ({ children }) => (
         <div
           style={{
             margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
+            maxWidth: 980,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            height: '100%',
           }}
         >
-          {children}
+          <div
+            style={{
+              margin: '0 auto',
+              maxWidth: 980,
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              height: '100%',
+              padding: '25px',
+            }}
+          >
+            <div style={{ flex: 2.5, paddingRight: '30px' }}>{children}</div>
+            <div style={{ flex: 1 }}>
+              <Sidebar title='My Blog' description='This is a simple blog' />
+              <Sidebar title='About me' description="I'm learning to be React Developer at MMT Digital :-)" />
+            </div>
+          </div>
         </div>
       </>
     )}
