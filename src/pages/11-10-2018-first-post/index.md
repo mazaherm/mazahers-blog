@@ -1,5 +1,5 @@
 ---
-path: "/hell-world"
+path: "/hello-world"
 date: "2018-10-11T12:02:33.962Z"
 title: "My first gatsby blog post"
 ---
